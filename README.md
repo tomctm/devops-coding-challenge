@@ -25,7 +25,7 @@ Feel free to include integrations with any third party software that you think i
     The first step is to fork the provided Django repository. You can find the repository at:
     
     ```
-    <https://gitlab.com/mrmilu/devops/devops_interview_test>
+    <https://github.com/mrmilu/devops-coding-callenge>
     
     ```
     
