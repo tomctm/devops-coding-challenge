@@ -42,14 +42,7 @@ Feel free to include integrations with any third party software that you think i
     You may also include any other stages, jobs, or scripts that you consider important.
     
 3. Commit and push your changes
-4. Create a merge request
-    
-    Go to your forked repository on GitLab and create a new merge request:
-    
-    - Set the target branch to `master` in the original repository
-    - Provide a descriptive title and any additional details in the description
-    
-    Click "Submit merge request" to initiate the review process.
+
 
 ### Optional: Deployment Suggestions
 
