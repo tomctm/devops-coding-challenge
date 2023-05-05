@@ -20,7 +20,7 @@ Feel free to include integrations with any third party software that you think i
 - Basic understanding of Docker
 
 ### Instructions
-1. Fork the Django repository
+1. Create a private fork of this repo
     
     The first step is to fork the provided Django repository. You can find the repository at:
     
