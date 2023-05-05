@@ -31,9 +31,9 @@ Feel free to include integrations with any third party software that you think i
     
     Click the "Fork" button in the top right corner and choose your personal namespace to create a fork.
     
-2. Design the GitLab CI/CD pipelines
+2. Design the GitLab CI/CD pipelines or Github Actions Workflow
     
-    Create a new file called `.gitlab-ci.yml` in the root of the Django project. This file will contain the GitLab CI configuration.
+    Create a new file called `.gitlab-ci.yml` in the root of the Django project. This file will contain the GitLab CI configuration (feel free to use github actions too)
     
     Design the CI/CD pipeline according to your preferences and best practices. 
     
