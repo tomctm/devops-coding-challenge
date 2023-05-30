@@ -25,11 +25,7 @@ services:
     command: /start
 
   postgres:
-    # build:
-    #   context: .
-    #   dockerfile: ./compose/production/postgres/Dockerfile
     image: postgres:14
-    # image: devops_interview_test_production_postgres
     container_name: devops_interview_test_local_postgres
     volumes:
       - devops_interview_test_local_postgres_data:/var/lib/postgresql/data
