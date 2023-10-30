@@ -2,11 +2,11 @@
 
 ### Introduction
 
-In this test, you are required to design a CI/CD pipeline for a Django repository using GitLab CI. You will have complete freedom to decide which stages, jobs, and scripts to include in the pipeline, based on your preferences and best practices for CI/CD.
+In this test, you are required to design a CI/CD pipeline for a Django repository using Github Actions. You will have complete freedom to decide which stages, jobs, and scripts to include in the pipeline, based on your preferences and best practices for CI/CD.
 
 For context, let’s imagine that the Django Team has started working on a project for a client and that they need a pipeline to confidently show their progress to both the Project Manager and the client itself.
 
-Your task is to fork the provided Django repository, create the CI/CD pipeline, and then create a merge request back to the original repository.
+Your task is to clone the provided Django repository, create the CI/CD pipeline, and then grant us access to the repository.
 
 The test is vague on purpose, we want you to design the pipeline based on what you think that should happen from start to finish.
 
@@ -15,25 +15,24 @@ Feel free to include integrations with any third party software that you think i
 ### Prerequisites
 
 - A Github account
-- Familiarity with GitLab CI/CD / Github Actions
+- Familiarity with Github Actions
 - Familiarity with Django
 - Basic understanding of Docker
 
 ### Instructions
-1. Create a private fork of this repo
+1. Clone this repo
     
-    The first step is to fork the provided Django repository. You can find the repository at:
+    The first step is to clone the provided Django repository. You can find the repository at:
     
     ```
     <https://github.com/mrmilu/devops-coding-challenge>
     
     ```
     
-    Click the "Fork" button in the top right corner and choose your personal namespace to create a fork.
     
 2. Design the GitLab CI/CD pipelines or Github Actions Workflow
     
-    Create a new file called `.gitlab-ci.yml` in the root of the Django project. This file will contain the GitLab CI configuration (feel free to use github actions too)
+    Create as many Github Workflows as you deem necessary.
     
     Design the CI/CD pipeline according to your preferences and best practices. 
     
@@ -52,7 +51,7 @@ Feel free to describe any specific services, configurations, or best practices y
 
 ### Deliverables
 
-- A forked Django repository with a `.gitlab-ci.yml` file containing your designed GitLab CI/CD pipeline or github-actions workflow
+- A cloned Django repository containing your designed Github Actions workflow(s)
 - Access granted to `iker.blanco@mrmilu.com` to the repo.
 - A markdown file named `DECISIONS.md` with an outline of your decisions so we can know why you did (or didn’t) do what you did :)
 - A markdown file named  `TODO.md` with an outline of the things that you would implement, fix, upgrade if you had more time.
