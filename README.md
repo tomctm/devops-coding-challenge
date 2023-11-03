@@ -59,7 +59,7 @@ Feel free to describe any specific services, configurations, or best practices y
 
 ### Questions
 
-If you have any questions, feel free to email us at devops+interviews@mrmilu.com
+If you have any questions, feel free to email us at devops-candidates@mrmilu.com
 
 
 Good luck! We're looking forward to reviewing your work.
