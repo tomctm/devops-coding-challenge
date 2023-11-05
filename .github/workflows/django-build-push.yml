@@ -4,7 +4,6 @@ on:
   push:
     paths:
       - 'compose/local/django/**'
-
 jobs:
   build:
     runs-on: ubuntu-latest
