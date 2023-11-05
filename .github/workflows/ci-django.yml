@@ -28,6 +28,7 @@ jobs:
       DJANGO_SECRET_KEY: ZjF1YRwsfquI5GkKiSnt5NJWTeNfFqMcJCarpOLXlZFVWTJAFLmEXf0DUmJ0BbjK
       CELERY_BROKER_URL: redis://redis:6379/0
       USE_DOCKER: no
+      DB_HOST: localhost
     services:
       postgres_main:
         image: postgres:12
