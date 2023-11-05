@@ -26,6 +26,7 @@ jobs:
       POSTGRES_DB: djtesting
       POSTGRES_PORT: 5432
       DJANGO_SECRET_KEY: ZjF1YRwsfquI5GkKiSnt5NJWTeNfFqMcJCarpOLXlZFVWTJAFLmEXf0DUmJ0BbjK
+      CELERY_BROKER_URL: redis://redis:6379/0
     services:
       postgres_main:
         image: postgres:12

@@ -1,4 +1,4 @@
-# DevOps Interview Test: Design a CI/CD Pipeline for a Django Repositoryy
+# DevOps Interview Test: Design a CI/CD Pipeline for a Django Repository
 
 ### Introduction
 
