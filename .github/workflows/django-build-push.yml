@@ -18,4 +18,5 @@ jobs:
       - name: Build and Push Django Docker Image
         run: |
           docker build -t django-app -f ./compose/local/django/Dockerfile .
-          docker push django-app
+          docker tag django-app tomctm/django-app:latest
+          docker push tomctm/django-app:latest
