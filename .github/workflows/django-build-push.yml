@@ -2,8 +2,6 @@ name: Docker Build - Django
 
 on:
   push:
-    branches:
-      - main
     paths:
       - 'compose/local/django/**'
 
