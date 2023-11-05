@@ -1,5 +1,5 @@
 # Feel free to make changes in any way you want to this dockerfile
-# It's a basic stripped down version that does the bare minimum to get the project runningg
+# It's a basic stripped down version that does the bare minimum to get the project runninggg
 
 # define an alias for the specific python version used in this file.
 FROM python:3.11.3-slim-bullseye as python
