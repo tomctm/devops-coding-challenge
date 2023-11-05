@@ -22,7 +22,7 @@ jobs:
     env:
       POSTGRES_USER: postgres
       POSTGRES_PASSWORD: postgres
-      POSTGRES_HOST: localhost # default host value for the database
+      DATABASE_URL: localhost # default host value for the database
       POSTGRES_DB: djtesting
       POSTGRES_PORT: 5432
       DJANGO_SECRET_KEY: ZjF1YRwsfquI5GkKiSnt5NJWTeNfFqMcJCarpOLXlZFVWTJAFLmEXf0DUmJ0BbjK
