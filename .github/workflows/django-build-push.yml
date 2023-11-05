@@ -1,0 +1,27 @@
+name: Docker Build - Django
+
+on:
+  push:
+    branches:
+      - main
+  paths:
+    - 'compose/local/django/**'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v1
+
+      - name: Login to Docker Hub
+        run: docker login -u ${{ secrets.DOCKERHUB_USERNAME }} -p ${{ secrets.DOCKERHUB_PASSWORD }}
+
+      - name: Build and Push Django Docker Image
+        run: |
+          docker build -t django-app -f ./compose/local/django/Dockerfile .
+          docker push django-app
