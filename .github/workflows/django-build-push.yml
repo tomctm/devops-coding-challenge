@@ -2,12 +2,15 @@ name: Docker Build - Django
 
 on:
   push:
-    paths:
-      - 'compose/local/django/**'
+    branches: [master]
+  pull_request:
+    branches: [master]
 jobs:
+  ci_django:
+    uses: tomctm/devops-coding-challenge/.github/workflows/ci-django.yml@master
   build:
     runs-on: ubuntu-latest
-
+    needs: [ci_django]
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
