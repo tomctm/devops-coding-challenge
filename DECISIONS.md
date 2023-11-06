@@ -4,7 +4,7 @@
 
 One of the components of this test involves establishing a continuous integration and continuous deployment (CI/CD) flow for the Django application hosted in this repository. I'll begin by explaining the decision to split the various pipelines.
 
-In this context, I've chosen to create three distinct but interconnected pipelines for this application.
+In this context, I've chosen to create three distinct but interconnected pipelines for this application. (GITHUB ACTIONS PIPELINES: https://github.com/tomctm/devops-coding-challenge/tree/master/.github/workflows)
 
 
 ````
@@ -59,3 +59,60 @@ As a final step, for the documentation component, we've established the build, t
 ### Optional Actions
 
 Should we consider enhancing these pipelines, our focus would shift towards the security aspect. We would implement a phase where external tools such as Snyk or Sonar are employed for code analysis of these images.
+
+
+### Deployment Suggestions
+
+As deployment best practices for this service, based on my experience, I would opt to host this service on a Kubernetes cluster (EKS, GKE, AKS...). This way, we have control and scalability when the application experiences high demand.
+
+An example of deploying this application could be as follows:
+
+````
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: devops-interview-django-deployment
+  labels:
+    app: devops-interview-django
+spec:
+  replicas: 1  
+  selector:
+    matchLabels:
+      app: devops-interview-django
+  template:
+    metadata:
+      labels:
+        app: devops-interview-django
+    spec:
+      containers:
+      - name: devops-interview-django
+        image: tomctm/node-app:latest 
+        ports:
+        - containerPort: 8000  
+        volumeMounts:
+        - name: app-volume
+          mountPath: /app
+      volumes:
+      - name: app-volume
+        hostPath:
+          path: /app  
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: devops-interview-django-service
+spec:
+  selector:
+    app: devops-interview-django
+  ports:
+    - protocol: TCP
+      port: 8000  
+      targetPort: 8000  
+  type: NodePort  
+  
+`````
+
+We have chosen to create a NodePort service since we plan to configure an Nginx against the application in the future.
+
+For a smooth workflow, and again based on my experience, I would have ArgoCD installed and generate Helm charts to deploy these applications.
