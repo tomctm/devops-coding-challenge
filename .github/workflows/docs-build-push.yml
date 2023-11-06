@@ -1,0 +1,25 @@
+name: Docker Build - Docs
+
+on:
+  push:
+    branches: [master]
+  pull_request:
+    branches: [master]
+jobs:
+  django-build:
+    uses: tomctm/devops-coding-challenge/.github/workflows/django-build-push.yml@master
+  build:
+    runs-on: ubuntu-latest
+    needs: [django-build]
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Login to Docker Hub
+        run: docker login -u ${{ secrets.DOCKER_USERNAME }} -p ${{ secrets.DOCKER_PASSWORD }}
+
+      - name: Build and Push Django Docker Image
+        run: |
+          docker build -t docs-django-app -f ./compose/local/docs/Dockerfile .
+          docker tag docs-django-app tomctm/docs-django-app:latest
+          docker push tomctm/docs-django-app:latest
