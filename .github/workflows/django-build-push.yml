@@ -20,6 +20,11 @@ jobs:
 
       - name: Build and Push Django Docker Image
         run: |
+         
+          branch_name=$(echo $GITHUB_REF | awk -F'/' '{print $3}')
+          
           docker build -t django-app -f ./compose/local/django/Dockerfile .
-          docker tag django-app tomctm/django-app:latest
-          docker push tomctm/django-app:latest
+          docker tag django-app tomctm/django-app:$branch_name          
+          docker push tomctm/django-app:$branch_name
+        env:
+          GITHUB_REF: ${{ github.ref }}
